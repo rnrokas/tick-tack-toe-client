@@ -13,6 +13,7 @@ const Game = (props) => {
       }
     }
   };
+
   const renderBoard = () => {
     if (board) {
       return (
@@ -53,6 +54,7 @@ const Game = (props) => {
       );
     }
   };
+
   const renderLog = () => {
     if (board) {
       return (
@@ -67,6 +69,7 @@ const Game = (props) => {
       );
     }
   };
+
   const renderBoardLabel = () => {
     if (board) {
       if (board.finished) {
@@ -88,6 +91,7 @@ const Game = (props) => {
     </Fragment>
   );
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onMove: (cellIndex, boardID) =>
@@ -113,4 +117,5 @@ const mapStateToProps = (state) => ({
   loading: state.game.loading,
   squares: state.game.squares,
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
