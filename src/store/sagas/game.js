@@ -12,7 +12,7 @@ export function* moveSaga(action) {
     const { cellIndex, boardID } = action;
     const body = { cellIndex };
     const res = yield axios.post(
-      `http://localhost:5000/action/move/${boardID}`,
+      `https://tictactoeapi-3rsmfuzmuq-lz.a.run.app/action/move/${boardID}`,
       body,
       config
     );
@@ -28,7 +28,7 @@ export function* moveSaga(action) {
 }
 export function* createBoardSaga(action) {
   try {
-    const res = yield axios.post(`http://localhost:5000/action/board`);
+    const res = yield axios.post(`https://tictactoeapi-3rsmfuzmuq-lz.a.run.app/action/board`);
     yield put({
       type: actionTypes.CREATE_BOARD_SUCCESS,
       payload: res.data,
@@ -44,7 +44,7 @@ export function* getBoardSaga(action) {
   try {
     const { boardID } = action;
     const res = yield axios.get(
-      `http://localhost:5000/action/board/${boardID}`
+      `https://tictactoeapi-3rsmfuzmuq-lz.a.run.app/action/board/${boardID}`
     );
     yield put({
       type: actionTypes.GET_BOARD_SUCCESS,
