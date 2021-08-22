@@ -100,7 +100,7 @@ const Game = (props) => {
   const renderTable = () => {
     return (
       // <div>{renderTableData()}</div>
-      <table>
+      <table class="styled-table">
         <tbody>
           <tr>
             <th>Id</th>
